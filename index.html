@@ -1,168 +1,230 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Gabriele Destefanis</title>
-    <meta name="description" content="Gabriele Destefanis: PM and software engineer in working hours, traveller and photographer in the free time.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
 
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Gabriele Destefanis</title>
+  <meta name="description"
+    content="Hello, I'm Gabriele Destefanis: father, husband, travel lover, motorcycle enthusiast, React Redux developer, CTO at Top Solution Srl">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <link rel="manifest" href="favicons/site.webmanifest">
+  <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="msapplication-config" content="favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Source+Sans+Pro:wght@400;600&display=swap');
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/default.css">
-    <link rel="stylesheet" href="css/mobile.css">
-    <link rel="stylesheet" href="css/tooltipster.css">
-    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js" type='text/javascript'></script>
-    <script type='text/javascript'>
-      window.Modernizr || document.write('<script src="js/vendor/modernizr-2.6.2.min.js"><\/script>')
-    </script>
-  </head>
-  <body>
-    <!--[if lt IE 7]>
+    html {
+      --palette-deep-blue: #1881c4;
+      --palette-deep-purple: #5f4cba;
+      --palette-purple: #c0c4e4;
+      --palette-blue: #c0d6e4;
+      --palette-red: #fb9692;
+      --palette-yellow: #fab297;
+      --palette-green: #afd7b4;
+      --palette-gray: #c0c0c0;
+      --palette-black: #444;
+      --palette-white: #fdfdfd;
+
+      --font-stack-main: 'Source Sans Pro', sans-serif;
+      --font-stack-alt: 'Just Another Hand', sans-serif;
+
+      background-color: #000;
+      background: linear-gradient(90deg,
+          var(--palette-blue) 20%, var(--palette-red) 20%,
+          var(--palette-red) 40%, var(--palette-yellow) 40%,
+          var(--palette-yellow) 60%, var(--palette-green) 60%,
+          var(--palette-green) 80%, var(--palette-purple) 80%);
+      background-attachment: fixed;
+      color: var(--palette-black);
+      font-family: var(--font-stack-main);
+      line-height: 1.3;
+      font-size: 20px;
+      padding: 0;
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    }
+
+    @media only screen and (max-width: 900px) {
+      html {
+        font-size: 16px;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--palette-white);
+      margin: 1rem auto;
+      padding: 1rem;
+      width: calc(100% - 2rem);
+      max-width: 1200px;
+    }
+
+    a {
+      color: var(--palette-deep-blue);
+    }
+
+    a:visited {
+      color: var(--palette-deep-purple);
+    }
+
+    a:active,
+    a:hover {
+      color: var(--palette-red);
+    }
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3 {
+      font-family: var(--font-stack-alt);
+      font-weight: 400;
+      line-height: 1;
+      margin: .2em 0;
+      text-align: center;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    h1,
+    .h1 {
+      font-size: 4rem;
+      display: inline;
+      white-space: nowrap;
+    }
+
+    h2,
+    .h2 {
+      font-size: 2.5rem;
+    }
+
+    h3,
+    .h3 {
+      font-size: 1.6rem;
+    }
+
+    header {
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    section {
+      margin: 1rem auto 3rem;
+      max-width: 640px;
+    }
+
+    section h2 {
+      margin: 0 0 -.55rem;
+    }
+
+    section div {
+      padding-top: 1rem;
+      border-top: 1px dashed var(--palette-purple);
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: .6rem;
+      text-align: center;
+    }
+
+    .grecaptcha-badge {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+  <header>
+    <span class="h1">hello</span> my name is <h1>Gabriele Destefanis</h1>
+  </header>
+  <main>
+    <section>
+      <h2>my life</h2>
+      <div>
+        <p>I live in Torino, it's a big city in <strong>Italy</strong> and you may know it as Turin.</p>
+        <p>I'm a father and a husband, in the freetime <strong>I love traveling</strong> with my family.</p>
+        <p>I'm also a <strong>motorcycle enthusiast</strong>, take a look at my blog <a
+            href="https://motoviaggiatori.it" target="_blank">MotoViaggiatori.it</a>.</p>
+      </div>
+    </section>
+    <section>
+      <h2>my job</h2>
+      <div>
+        <p>I'm the <strong>CTO</strong> of <a href="https://topsolution.it" target="_blank">Top Solution Srl</a>, a
+          software house specialized in web applications.</p>
+        <p>I'm also a front-end web developer, focused on <strong>React Redux</strong>.</p>
+      </div>
+    </section>
+    <section>
+      <h2>contacts & links</h2>
+      <div id="contacts-wrapper">
+        <p>
+          You can reach me using
+          <a href="https://www.facebook.com/gabriele.detefanis" target="_blank" rel="noopener noreferrer">Facebook</a>
+          and
+          <a href="https://twitter.com/destegabry" target="_blank" rel="noopener noreferrer">Twitter</a>
+          but I'm not very active on social networks.</p>
+        <p>
+          Here's my
+          <a href="https://github.com/destegabry" target="_blank" rel="noopener noreferrer">GitHub</a>
+          and
+          <a href="https://gitlab.com/g.destefanis" target="_blank" rel="noopener noreferrer">GitLab</a> pages.
+        </p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <h3>That's all Folks!</h3>
+    <p>No wait, I still have to give you a couple of infos:</p>
+    <p>I'm not collecting your personal data, but use Google Analytics to collect aggregated traffic data.</p>
+    <p>I'm protecting this site with reCAPTCHA (<a href="https://policies.google.com/privacy" target="_blank">Privacy
+        Policy</a> and
+      <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply).
+    </p>
+  </footer>
 
-    <div class="container">
-      <header>
-        <h1>Gabriele Destefanis</h1>
-        <p>Full stack web developer in working hours, traveller and photographer in the free time.</p>
-      </header>
-      <main>
-        <section>
-          Want to hire me? Here's my contacts:
-          <table class="contacts">
-            <tr>
-              <th>
-                <p>Phone</p>
-                <p>SMS</p>
-                <p>iMessage</p>
-                <p>Whatsapp</p>
-                <p>Viber</p>
-              </th>
-              <td><span class="pointable muted" id="phoneShow">Click to show</span></td>
-            </tr>
-            <tr>
-              <th>Email</th>
-              <td><span class="pointable muted" id="emailShow">Click to show. Remember: TL;DR.</span></td>
-            </tr>
-          </table>
-          <ul class="social">
-            <li  class="pill facebook">
-              <a href="http://facebook.com/gabriele.detefanis" title="Click and go to my Facebook">
-                <i class="fa fa-facebook fa-lg"></i>
-                Facebook
-              </a>
-            </li>
-            <li  class="pill flickr">
-              <a href="http://flickr.com/destegabry" title="Click and go to my Flickr">
-                <i class="fa fa-flickr fa-lg"></i>
-                Flickr
-              </a>
-            </li>
-            <li  class="pill github">
-              <a href="http://github.com/destegabry" title="Click and go to my Github">
-                <i class="fa fa-github fa-lg"></i>
-                Github
-              </a>
-            </li>
-            <li  class="pill google-plus">
-              <a href="https://plus.google.com/+GabrieleDestefanis‎" title="Click and go to my Google+">
-                <i class="fa fa-google-plus fa-lg"></i>
-                Google+
-              </a>
-            </li>
-            <li  class="pill linkedin">
-              <a href="http://www.linkedin.com/pub/gabriele-destefanis/6b/a8a/70b" title="Click and go to my Linkedin">
-                <i class="fa fa-linkedin fa-lg"></i>
-                Linkedin
-              </a>
-            </li>
-            <li  class="pill skype">
-              <a href="skype:destegabry?call" title="Click and call me with Skype">
-                <i class="fa fa-skype fa-lg"></i>
-                Skype
-              </a>
-            </li>
-            <li class="pill twitter">
-              <a href="http://twitter.com/destegabry" title="Click and go to my Twitter">
-                <i class="fa fa-twitter fa-lg"></i>
-                Twitter
-              </a>
-            </li>
-            <li  class="pill tumblr">
-              <a href="http://gabrieledestefanis.com" title="Click and go to my Tumblr">
-                <i class="fa fa-tumblr fa-lg"></i>
-                Tumblr
-              </a>
-            </li>
-          </ul>
-        </section>
-        <section>
-          Here we have some of my interests and skills, <span class="pointable link" id="randomize">random order</span>:
-          <ul class="cloud shuffle">
-            <li class="pill">AngularJS</li>
-            <li class="pill">Photography</li>
-            <li class="pill">Mountain bike</li>
-            <li class="pill">Snowboard</li>
-            <li class="pill">Travel</li>
-            <li class="pill">Reading</li>
-            <li class="pill">Movies</li>
-            <li class="pill">MySQL</li>
-            <li class="pill">PHP</li>
-            <li class="pill">JavaScript</li>
-            <li class="pill">Agile Development</li>
-            <li class="pill">CSS3</li>
-            <li class="pill">HTML5</li>
-            <li class="pill">C#</li>
-            <li class="pill">.NET</li>
-            <li class="pill">NETMF</li>
-            <li class="pill">Web Applications</li>
-            <li class="pill">Good food</li>
-            <li class="pill">Coffee</li>
-            <li class="pill">Objective-C</li>
-            <li class="pill">Java</li>
-            <li class="pill">Internet</li>
-            <li class="pill">Team Working</li>
-            <li class="pill">Mobile</li>
-            <li class="pill">NodeJS</li>
-            <li class="pill">iOS</li>
-            <li class="pill">Mac</li>
-            <li class="pill">JSON</li>
-            <li class="pill">REST</li>
-          </ul>
-        </section>
-        <!--section>
-          Places I've been:
-          <div id="mapdiv" class="worldmap"></div>​
-        </section-->
-      </main>
-      <footer>
-        <span class="pull-left">©2013 <strong>Gabriele Destefanis</strong></span>
-        <img src="img/italy.png" alt="Made in Italy">
-        <span class="pull-right">Carefully handmade in Torino, <strong>Italy</strong></span>
-      </footer>
-    </div>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LfyAOQZAAAAAG9c3WOBRqR8UN2wjpRwRfENbi2S"></script>
+  <script>
+    grecaptcha.ready(function () {
+      grecaptcha.execute('6LfyAOQZAAAAAG9c3WOBRqR8UN2wjpRwRfENbi2S', { action: 'submit' })
+        .then(function (token) {
+          var text = atob('Z2FicmllbGVAZGVzdGVmYW5pcy5ldQ==');
+          var email = document.createElement('p');
+          email.innerHTML = 'Email: <a href="mailto:' + text + '">' + text + '</a>';
+          text = atob('KzM5IDMzOCA2NzQ0NDE1');
+          var phone = document.createElement('p');
+          phone.innerHTML = 'Phone: <a href="call:' + text + '">' + text + '</a>';
+          document.getElementById('contacts-wrapper').prepend(phone);
+          document.getElementById('contacts-wrapper').prepend(email);
+        });
+    });
+  </script>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-    <script src="js/vendor/jquery.shuffle.js"></script>
-    <script src="js/vendor/jquery.tooltipster.min.js"></script>
-    <script src="js/main.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TC6RF7Q9K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <script>
-        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-        e.src='//www.google-analytics.com/analytics.js';
-        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-        ga('create','UA-37905264-1');ga('send','pageview');
-    </script>
-  </body>
+    gtag('config', 'G-5TC6RF7Q9K');
+  </script>
+</body>
+
 </html>
