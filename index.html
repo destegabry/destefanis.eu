@@ -35,14 +35,11 @@
       --font-stack-main: 'Source Sans Pro', sans-serif;
       --font-stack-alt: 'Just Another Hand', sans-serif;
 
-      background-color: #000;
       background: linear-gradient(90deg,
           var(--palette-blue) 20%, var(--palette-red) 20%,
           var(--palette-red) 40%, var(--palette-yellow) 40%,
           var(--palette-yellow) 60%, var(--palette-green) 60%,
           var(--palette-green) 80%, var(--palette-purple) 80%);
-      background-attachment: fixed;
-      color: var(--palette-black);
       font-family: var(--font-stack-main);
       line-height: 1.3;
       font-size: 20px;
@@ -56,29 +53,60 @@
       }
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      background: var(--palette-white);
       margin: 1rem auto;
       padding: 1rem;
       width: calc(100% - 2rem);
       max-width: 1200px;
     }
 
-    a {
-      color: var(--palette-deep-blue);
+    * {
+      box-sizing: border-box;
     }
 
-    a:visited {
-      color: var(--palette-deep-purple);
+    a {
+      color: var(--palette-deep-blue);
     }
 
     a:active,
     a:hover {
       color: var(--palette-red);
+    }
+
+    @media (prefers-color-scheme: light) {
+      html {
+        color: var(--palette-black);
+      }
+
+      body {
+        background: var(--palette-white);
+      }
+
+      a {
+        color: var(--palette-deep-blue);
+      }
+
+      a:visited {
+        color: var(--palette-deep-purple);
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html {
+        color: var(--palette-white);
+      }
+
+      body {
+        background: var(--palette-black);
+      }
+
+      a {
+        color: var(--palette-blue);
+      }
+
+      a:visited {
+        color: var(--palette-purple);
+      }
     }
 
     h1,
