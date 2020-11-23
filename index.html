@@ -237,7 +237,7 @@
           email.innerHTML = 'Email: <a href="mailto:' + text + '">' + text + '</a>';
           text = atob('KzM5IDMzOCA2NzQ0NDE1');
           var phone = document.createElement('p');
-          phone.innerHTML = 'Phone: <a href="call:' + text + '">' + text + '</a>';
+          phone.innerHTML = 'Phone: <a href="tel:' + text + '">' + text + '</a>';
           document.getElementById('contacts-wrapper').prepend(phone);
           document.getElementById('contacts-wrapper').prepend(email);
         });
