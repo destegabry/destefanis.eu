@@ -20,7 +20,7 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Source+Sans+Pro:wght@400;600&display=swap');
 
-    html {
+    :root {
       --palette-deep-blue: #1881c4;
       --palette-deep-purple: #5f4cba;
       --palette-purple: #c0c4e4;
@@ -32,28 +32,47 @@
       --palette-black: #444;
       --palette-white: #fdfdfd;
 
+      --background: var(--palette-white);
+      --text-color: var(--palette-black);
+      --link: var(--palette-deep-blue);
+      --link-visited: var(--palette-deep-purple);
+
       --font-stack-main: 'Source Sans Pro', sans-serif;
       --font-stack-alt: 'Just Another Hand', sans-serif;
+      --font-size: 20px;
+    }
 
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: var(--palette-black);
+        --text-color: var(--palette-white);
+        --link: var(--palette-blue);
+        --link-visited: var(--palette-purple);
+      }
+    }
+
+    @media only screen and (max-width: 900px) {
+      :root {
+        --font-size: 16px;
+      }
+    }
+
+    html {
       background: linear-gradient(90deg,
           var(--palette-blue) 20%, var(--palette-red) 20%,
           var(--palette-red) 40%, var(--palette-yellow) 40%,
           var(--palette-yellow) 60%, var(--palette-green) 60%,
           var(--palette-green) 80%, var(--palette-purple) 80%);
+      color: var(--text-color);
       font-family: var(--font-stack-main);
       line-height: 1.3;
-      font-size: 20px;
+      font-size: var(--font-size);
       padding: 0;
       padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     }
 
-    @media only screen and (max-width: 900px) {
-      html {
-        font-size: 16px;
-      }
-    }
-
     body {
+      background: var(--background);
       margin: 1rem auto;
       padding: 1rem;
       width: calc(100% - 2rem);
@@ -65,7 +84,7 @@
     }
 
     a {
-      color: var(--palette-deep-blue);
+      color: var(--link-color);
     }
 
     a:active,
@@ -73,40 +92,8 @@
       color: var(--palette-red);
     }
 
-    @media (prefers-color-scheme: light) {
-      html {
-        color: var(--palette-black);
-      }
-
-      body {
-        background: var(--palette-white);
-      }
-
-      a {
-        color: var(--palette-deep-blue);
-      }
-
-      a:visited {
-        color: var(--palette-deep-purple);
-      }
-    }
-
-    @media (prefers-color-scheme: dark) {
-      html {
-        color: var(--palette-white);
-      }
-
-      body {
-        background: var(--palette-black);
-      }
-
-      a {
-        color: var(--palette-blue);
-      }
-
-      a:visited {
-        color: var(--palette-purple);
-      }
+    a:visited {
+      color: var(--link-visited);
     }
 
     h1,
@@ -175,9 +162,6 @@
 </head>
 
 <body>
-  <!--[if lt IE 7]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
   <header>
     <span class="h1">hello</span> my name is <h1>Gabriele Destefanis</h1>
   </header>
@@ -191,6 +175,8 @@
             href="https://motoviaggiatori.it" target="_blank">MotoViaggiatori.it</a>.</p>
       </div>
     </section>
+    <!--[if IE]>
+  <![endif]-->
     <section>
       <h2>my job</h2>
       <div>
